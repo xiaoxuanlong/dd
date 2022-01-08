@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>模板引擎提供的一组功能性内置对象，可以在模板中直接使用这些对象提供的功能方法</title>
+</head>
+<body>
+
+time：<div th:text="${time}"></div>
+<!--内置功能对象前都需要加#号，内置对象一般都以 s 结尾-->
+<!--时间数据格式-->
+time格式化：<div th:text="${#dates.format(time,'yyyy-MM-dd HH:mm:ss')}"></div>
+字符串：<div th:text="${data}"></div>
+<!--字符串截取函数-->
+使用字符串截取功能：<div th:text="${#strings.substring(data,0,10)}"></div>
+<div th:text="${#lists}"></div>
+</body>
+</html>

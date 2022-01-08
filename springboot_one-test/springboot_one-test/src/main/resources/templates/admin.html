@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员</title>
+</head>
+<body>
+ID号码：<span th:text="${admin.id}"></span><br>
+姓名：<span th:text="${admin.adminname}"></span><br>
+<h2 style="color: #ff0000">实际开发推荐使用：相对路径（没有参数）</h2><br>
+<a th:href="@{/html/useradd}">查看：相对路径</a><br>
+<h2 style="color: red">实际开发推荐使用：相对路径（路径中有参数）</h2>
+<a th:href="@{/html/info(id=${admin.id})}">推荐使用：优雅的带参数路径
+    写法</a>
+</body>
+</html>

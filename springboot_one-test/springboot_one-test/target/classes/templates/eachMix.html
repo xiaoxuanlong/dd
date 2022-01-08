@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>数组与集合使用混合遍历</title>
+</head>
+<body>
+<div th:each="myListMap:${myList}">
+    <div th:each="myListMapObj:${myListMap}">
+        Map 集合的 key：<span th:text="${myListMapObj.key}"></span>
+        <div th:each="myListMapObjList:${myListMapObj.value}">
+            <span th:text="${myListMapObjList.id}"></span>
+            <span th:text="${myListMapObjList.name}"></span>
+            <span th:text="${myListMapObjList.age}"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

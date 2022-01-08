@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>map集合</title>
+</head>
+<body>
+    <div th:each="Person,PersonState:${personMap}">
+        第几个：<span th:text="${PersonState.count}"></span>;
+        键：<span th:text="${Person.key}"></span>;
+        值：<span th:text="${Person.value}"></span>;
+        对象里面的ID：<span th:text="${Person.value.id}"></span>;
+        对象面的name：<span th:text="${Person.value.name}"></span>;
+        对象面的age：<span th:text="${Person.value.age}"></span>
+    </div>
+</body>
+</html>

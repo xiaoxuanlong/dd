@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" >
+    <title>ifAndSwith条件与选择语句</title>
+</head>
+<body>
+<h1>th:if 用法:如果满足条件显示，否则相反</h1>
+<div th:if="${human2.sex eq 1}">
+    男：<input type="radio" name="sex" th:value="1"/>
+</div>
+<div th:if="${human2.sex eq 0}">
+    女：<input type="radio" name="sex" th:value="0"/>
+</div>
+<h1>th:unless 用法：与 th:if 用法相反，即对条件判断条件取反</h1>
+<div th:unless="${human3.sex == 0}">
+    男：<input type="radio" name="sex" th:value="1"/>
+</div>
+<div th:unless="${human3.sex eq 1}">
+    女：<input type="radio" name="sex" th:value="0"/>
+</div>
+<div th:if="${human1 eq null}">
+    <h3 style="color: #0b518d">用户未登录</h3>
+</div>
+<!--unless：当值为假的时候，则条件成立；与if相反-->
+<div th:unless="${human2 == null}">
+    用户姓名：<span th:text="${human2.name}"></span>
+</div>
+<h1>从 session 中获取值</h1>
+<div th:if="${human3 != null}">
+    <span th:text="${human3.name}"></span>
+</div>
+<h1>th:switch/th:case 用法</h1>
+<div th:switch="${human2.sex}">
+    <span th:case="1">性别：男</span><br/>
+    <span th:case="0">性别：女</span><br/>
+    <span th:case="*">性别：保密</span>
+</div>
+<!--一旦某个 case  判断值为 true ，剩余的 case  默认不执行 ，“* ”表示默
+的 认的 case ，前面的 case-->
+</body>
+</html>

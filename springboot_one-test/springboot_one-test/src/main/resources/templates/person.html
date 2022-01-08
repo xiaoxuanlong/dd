@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>解析后台对象数据</title>
+    <!--该方法是常用方法-->
+    <script type="text/javascript" th:src="@{/jquery-3.6.0.js}">
+    </script>
+    <!--以下方式无法引入 js-->
+<!--    <script src="/static/js/jquery-3.6.0.js"></script>-->
+    <script>
+        $(function (){
+               alert(111)
+        })
+        function show(id){
+            alert("用户学号："+id);
+        }
+    </script>
+</head>
+<body>
+ID号:<span th:text="${person.id}"></span><br>
+姓名:<span th:text="${person.name}"></span><br>
+年龄:<span th:text="${person.age}"></span><br>
+<h1>th:method 属性的使用</h1>
+<a th:onclick="'show('+${person.id}+')'">点击：显示学生编号</a><br>
+<form th:action="@{/html/admin}" th:method="post">
+    ID号:<input type="text" th:value="${person.id}"><br>
+    姓名：<input type="text" th:value="${person.name}"><br>
+    年龄：<input type="text" th:value="${person.age}"><br>
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>
